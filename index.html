@@ -1,0 +1,1760 @@
+<!DOCTYPE html>
+
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cindy Glorya Salindeho — Civil Engineering Graduate (GPA 3.77/4.00), Project Administration Specialist & Logistics Professional. 1 year experience at PT Pegadaian managing procurement documents, vendor payments, and site surveys across Eastern Indonesia.">
+    <meta name="keywords" content="Cindy Glorya Salindeho, Civil Engineer, Project Administration, Logistics Professional, Document Control">
+    <meta property="og:title" content="Cindy Glorya Salindeho — Project & Logistics Professional">
+    <meta property="og:description" content="Civil Engineering Graduate with 1 year experience at PT Pegadaian. Expert in procurement document management, vendor payment processing, and multi-site project coordination across Eastern Indonesia.">
+    <meta property="og:type" content="website">
+    <title>Cindy Glorya Salindeho — Civil Engineer | Project & Logistics Professional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        teal: { tropical: '#00CEC8' },
+                        coral: { peach: '#FF9C5F' },
+                        orange: { tropical: '#EB4203' },
+                        sand: { warm: '#FCEFC3' },
+                        ivory: { soft: '#FFFDF8' },
+                        charcoal: '#111111',
+                        muted: '#6B6B6B',
+                    },
+                    fontFamily: {
+                        display: ['Playfair Display', 'serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        'premium': '24px',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #FFFDF8; color: #111; overflow-x: hidden; }
+        h1, h2, h3, h4, h5 { font-family: 'Playfair Display', serif; }
+
+        /* Loading Screen */
+        #loader {
+            position: fixed; inset: 0; z-index: 9999;
+            background: #111; display: flex; align-items: center; justify-content: center;
+            flex-direction: column; transition: opacity 0.6s, visibility 0.6s;
+        }
+        #loader.hidden { opacity: 0; visibility: hidden; }
+        .loader-ring {
+            width: 60px; height: 60px; border-radius: 50%;
+            border: 3px solid rgba(0,206,200,0.15);
+            border-top-color: #00CEC8; animation: spin 0.9s linear infinite;
+        }
+        .loader-text { color: #FFFDF8; font-family: 'Playfair Display', serif; margin-top: 20px; font-size: 1.2rem; letter-spacing: 2px; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* Scroll Progress */
+        #scroll-progress {
+            position: fixed; top: 0; left: 0; height: 3px; z-index: 1000;
+            background: linear-gradient(90deg, #00CEC8, #FF9C5F, #EB4203);
+            width: 0%; transition: width 0.1s;
+        }
+
+        /* Glass Card */
+        .glass-card {
+            background: rgba(255,255,255,0.55);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .glass-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(0,206,200,0.12);
+            border-color: rgba(0,206,200,0.3);
+        }
+        .glass-dark {
+            background: rgba(255,255,255,0.06);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 24px;
+        }
+
+        /* Hero Blob */
+        .hero-blob {
+            position: absolute; width: 500px; height: 500px; border-radius: 50%;
+            background: linear-gradient(135deg, #00CEC8, #FF9C5F);
+            filter: blur(80px); opacity: 0.35;
+            animation: blobFloat 8s ease-in-out infinite;
+        }
+        @keyframes blobFloat {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.05); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+        }
+
+        /* Floating Animation */
+        .float-anim { animation: float 6s ease-in-out infinite; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Fade In Up */
+        .reveal {
+            opacity: 0; transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+
+        /* Scale Reveal */
+        .scale-reveal {
+            opacity: 0; transform: scale(0.9);
+            transition: opacity 0.6s, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .scale-reveal.active { opacity: 1; transform: scale(1); }
+
+        /* Timeline */
+        .timeline-line {
+            position: absolute; left: 50%; top: 0; bottom: 0; width: 3px;
+            background: linear-gradient(to bottom, #00CEC8, #FF9C5F);
+            transform: translateX(-50%);
+        }
+        @media (max-width: 768px) {
+            .timeline-line { left: 24px; }
+        }
+
+        /* Skill Badge */
+        .skill-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 8px 18px; border-radius: 50px;
+            background: rgba(0,206,200,0.08); border: 1px solid rgba(0,206,200,0.2);
+            color: #111; font-size: 0.875rem; font-weight: 500;
+            transition: all 0.3s; cursor: default;
+        }
+        .skill-badge:hover {
+            background: #00CEC8; color: white; border-color: #00CEC8;
+            transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,206,200,0.25);
+        }
+
+        /* Mouse Glow */
+        .mouse-glow {
+            position: fixed; width: 300px; height: 300px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,206,200,0.08) 0%, transparent 70%);
+            pointer-events: none; z-index: 0;
+            transform: translate(-50%, -50%); transition: opacity 0.3s;
+        }
+
+        /* Carousel */
+        .testimonial-track {
+            display: flex; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Nav active */
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+            background: #00CEC8; transition: width 0.3s;
+        }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #FFFDF8; }
+        ::-webkit-scrollbar-thumb { background: #00CEC8; border-radius: 4px; }
+
+        /* Project Modal */
+        .modal-overlay {
+            position: fixed; inset: 0; z-index: 9000;
+            background: rgba(0,0,0,0.6); backdrop-filter: blur(8px);
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; visibility: hidden; transition: all 0.4s;
+        }
+        .modal-overlay.show { opacity: 1; visibility: visible; }
+        .modal-content {
+            background: #FFFDF8; border-radius: 24px; padding: 40px;
+            max-width: 700px; width: 90%; max-height: 85vh; overflow-y: auto;
+            transform: scale(0.9) translateY(20px); transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .modal-overlay.show .modal-content { transform: scale(1) translateY(0); }
+
+        /* Journey Path */
+        .journey-path { position: relative; }
+        .journey-node {
+            position: relative; padding-left: 60px;
+        }
+        .journey-node::before {
+            content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 3px;
+            background: linear-gradient(to bottom, #00CEC8, #FF9C5F);
+        }
+        .journey-node:last-child::before { display: none; }
+        .journey-dot {
+            position: absolute; left: 10px; top: 8px;
+            width: 24px; height: 24px; border-radius: 50%;
+            background: #00CEC8; border: 4px solid #FFFDF8;
+            box-shadow: 0 0 0 3px #00CEC8; z-index: 1;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed; bottom: 100px; right: 24px; z-index: 800;
+            width: 56px; height: 56px; border-radius: 50%;
+            background: #25D366; color: white; display: flex;
+            align-items: center; justify-content: center;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+            transition: all 0.3s; cursor: pointer;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(37,211,102,0.5); }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed; bottom: 30px; right: 24px; z-index: 800;
+            width: 44px; height: 44px; border-radius: 50%;
+            background: #111; color: white; display: flex;
+            align-items: center; justify-content: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            transition: all 0.3s; cursor: pointer;
+            opacity: 0; visibility: hidden; transform: translateY(10px);
+        }
+        .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+        .back-to-top:hover { background: #00CEC8; transform: translateY(-2px); }
+
+        /* Counter animation */
+        .counter-value { font-variant-numeric: tabular-nums; }
+
+        /* Nav mobile */
+        .mobile-menu {
+            position: fixed; inset: 0; z-index: 950;
+            background: rgba(17,17,17,0.95); backdrop-filter: blur(20px);
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; visibility: hidden; transition: all 0.4s;
+        }
+        .mobile-menu.show { opacity: 1; visibility: visible; }
+
+        /* Image portrait */
+        .portrait-container {
+            position: relative;
+        }
+        .portrait-ring {
+            position: absolute; inset: -12px; border-radius: 50%;
+            border: 3px solid transparent;
+            background: linear-gradient(135deg, #00CEC8, #FF9C5F, #EB4203) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor; mask-composite: exclude;
+            animation: ringRotate 6s linear infinite;
+        }
+        @keyframes ringRotate {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Stat card hover */
+        .stat-card { transition: all 0.3s; }
+        .stat-card:hover { transform: translateY(-4px); }
+
+        /* Section divider */
+        .section-divider {
+            width: 60px; height: 4px; border-radius: 2px;
+            background: linear-gradient(90deg, #00CEC8, #FF9C5F);
+        }
+
+        /* Photo Gallery */
+        .gallery-main {
+            position: relative; overflow: hidden; border-radius: 16px;
+            background: #1a1a1a; cursor: grab;
+        }
+        .gallery-main:active { cursor: grabbing; }
+        .gallery-main img {
+            transition: transform 0.3s ease; transform-origin: center center;
+        }
+        .gallery-main img.zoomed { transition: transform 0.3s ease; }
+        .gallery-nav-btn {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            width: 36px; height: 36px; border-radius: 50%;
+            background: rgba(0,0,0,0.45); color: white; border: none;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; transition: all 0.3s; z-index: 5;
+            backdrop-filter: blur(4px);
+        }
+        .gallery-nav-btn:hover { background: rgba(0,206,200,0.8); transform: translateY(-50%) scale(1.1); }
+        .gallery-nav-btn.prev { left: 10px; }
+        .gallery-nav-btn.next { right: 10px; }
+        .gallery-zoom-controls {
+            position: absolute; bottom: 12px; right: 12px; z-index: 5;
+            display: flex; gap: 6px;
+        }
+        .gallery-zoom-btn {
+            width: 34px; height: 34px; border-radius: 10px;
+            background: rgba(0,0,0,0.45); color: white; border: none;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; transition: all 0.3s;
+            backdrop-filter: blur(4px); font-size: 16px; font-weight: bold;
+        }
+        .gallery-zoom-btn:hover { background: rgba(0,206,200,0.8); }
+        .gallery-counter {
+            position: absolute; top: 12px; left: 12px; z-index: 5;
+            padding: 4px 12px; border-radius: 20px;
+            background: rgba(0,0,0,0.45); color: white;
+            font-size: 12px; font-weight: 600;
+            backdrop-filter: blur(4px);
+        }
+        .gallery-thumbs {
+            display: flex; gap: 8px; margin-top: 10px;
+            overflow-x: auto; padding-bottom: 4px;
+        }
+        .gallery-thumbs::-webkit-scrollbar { height: 4px; }
+        .gallery-thumbs::-webkit-scrollbar-thumb { background: #00CEC8; border-radius: 2px; }
+        .gallery-thumb {
+            width: 60px; height: 44px; border-radius: 8px; overflow: hidden;
+            cursor: pointer; border: 2px solid transparent;
+            transition: all 0.3s; flex-shrink: 0; opacity: 0.6;
+        }
+        .gallery-thumb:hover { opacity: 0.9; }
+        .gallery-thumb.active { border-color: #00CEC8; opacity: 1; }
+        .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+        
+    </style>
+</head>
+<body class="font-body antialiased">
+
+<!-- Loading Screen -->
+<div id="loader">
+    <div class="loader-ring"></div>
+    <p class="loader-text">Cindy Glorya</p>
+</div>
+
+<!-- Scroll Progress -->
+<div id="scroll-progress"></div>
+
+<!-- Mouse Glow -->
+<div class="mouse-glow" id="mouseGlow"></div>
+
+<!-- Navigation -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-[900] transition-all duration-500">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 lg:h-20">
+            <a href="#home" class="font-display text-xl font-bold tracking-tight">
+                <span class="text-teal-tropical">C</span><span class="text-charcoal">indy</span>
+            </a>
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="#home" class="nav-link text-sm font-medium text-muted hover:text-charcoal transition-colors">Home</a>
+                <a href="#about" class="nav-link text-sm font-medium text-muted hover:text-charcoal transition-colors">About</a>
+                <a href="#expertise" class="nav-link text-sm font-medium text-muted hover:text-charcoal transition-colors">Expertise</a>
+                <a href="#experience" class="nav-link text-sm font-medium text-muted hover:text-charcoal transition-colors">Experience</a>
+                <a href="#projects" class="nav-link text-sm font-medium text-muted hover:text-charcoal transition-colors">Projects</a>
+                <a href="#journey" class="nav-link text-sm font-medium text-muted hover:text-charcoal transition-colors">Journey</a>
+                <a href="#skills" class="nav-link text-sm font-medium text-muted hover:text-charcoal transition-colors">Skills</a>
+                <a href="#testimonials" class="nav-link text-sm font-medium text-muted hover:text-charcoal transition-colors">Testimonials</a>
+                <a href="#contact" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-teal-tropical text-white text-sm font-semibold hover:shadow-lg hover:shadow-teal-tropical/25 transition-all hover:-translate-y-0.5">
+                    <i data-lucide="mail" class="w-4 h-4"></i> Contact
+                </a>
+            </div>
+            <button id="menuToggle" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl hover:bg-sand-warm transition-colors">
+                <i data-lucide="menu" class="w-5 h-5"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <button id="menuClose" class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-xl text-white hover:bg-white/10 transition-colors">
+        <i data-lucide="x" class="w-6 h-6"></i>
+    </button>
+    <div class="flex flex-col items-center gap-6">
+        <a href="#home" class="mobile-link text-2xl font-display text-white hover:text-teal-tropical transition-colors">Home</a>
+        <a href="#about" class="mobile-link text-2xl font-display text-white hover:text-teal-tropical transition-colors">About</a>
+        <a href="#expertise" class="mobile-link text-2xl font-display text-white hover:text-teal-tropical transition-colors">Expertise</a>
+        <a href="#experience" class="mobile-link text-2xl font-display text-white hover:text-teal-tropical transition-colors">Experience</a>
+        <a href="#projects" class="mobile-link text-2xl font-display text-white hover:text-teal-tropical transition-colors">Projects</a>
+        <a href="#journey" class="mobile-link text-2xl font-display text-white hover:text-teal-tropical transition-colors">Journey</a>
+        <a href="#skills" class="mobile-link text-2xl font-display text-white hover:text-teal-tropical transition-colors">Skills</a>
+        <a href="#testimonials" class="mobile-link text-2xl font-display text-white hover:text-teal-tropical transition-colors">Testimonials</a>
+        <a href="#contact" class="mt-4 inline-flex items-center gap-2 px-8 py-3 rounded-full bg-teal-tropical text-white font-semibold">
+            <i data-lucide="mail" class="w-5 h-5"></i> Contact Me
+        </a>
+    </div>
+</div>
+
+<!-- ==================== HERO SECTION ==================== -->
+<section id="home" class="relative min-h-screen flex items-center overflow-hidden pt-20">
+    <div class="hero-blob top-20 right-1/4"></div>
+    <div class="hero-blob bottom-10 left-1/4" style="animation-delay: -4s; opacity: 0.2; width: 350px; height: 350px;"></div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full py-12 lg:py-0">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <!-- Left Content -->
+            <div class="order-2 lg:order-1">
+                <div class="reveal">
+                    <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-tropical/10 text-teal-tropical text-sm font-medium mb-6">
+                        <span class="w-2 h-2 rounded-full bg-teal-tropical animate-pulse"></span>
+                        Available for Opportunities
+                    </span>
+                </div>
+                <h1 class="reveal reveal-delay-1 font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6">
+                    Hi, I'm <span class="text-teal-tropical">Cindy</span>.
+                </h1>
+                <p class="reveal reveal-delay-2 font-display text-xl md:text-2xl text-muted leading-relaxed mb-4">
+                    Building better projects through <span class="text-coral-peach font-semibold">precision</span>, <span class="text-teal-tropical font-semibold">coordination</span>, and <span class="text-orange-tropical font-semibold">operational excellence</span>.
+                </p>
+                <p class="reveal reveal-delay-3 text-muted leading-relaxed mb-8 max-w-lg">
+                    Civil Engineering graduate with 1 year of professional experience as Administrator at PT Pegadaian. Specialized in large-scale document management, project administration, procurement & infrastructure, document control, and vendor payment processing. Known for being detail-oriented, organized, adaptable, and collaborative in supporting operational smoothness and project completion.
+                </p>
+                <div class="reveal reveal-delay-4 flex flex-wrap gap-4 mb-12">
+                    <a href="#projects" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-teal-tropical text-white font-semibold hover:shadow-xl hover:shadow-teal-tropical/30 transition-all hover:-translate-y-1">
+                        <i data-lucide="folder-open" class="w-5 h-5"></i> View My Projects
+                    </a>
+                    <a href="https://tinyurl.com/cindyglorycv" target="_blank" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border-2 border-charcoal/15 text-charcoal font-semibold hover:border-teal-tropical hover:text-teal-tropical transition-all hover:-translate-y-1">
+                        <i data-lucide="download" class="w-5 h-5"></i> Download Resume
+                    </a>
+                </div>
+
+                <!-- Hero Metrics -->
+                <div class="reveal reveal-delay-5 grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="stat-card text-center p-4 rounded-premium bg-white/60 backdrop-blur-sm border border-white/40">
+                        <div class="counter-value text-2xl lg:text-3xl font-bold text-teal-tropical" data-target="180">0</div>
+                        <div class="text-xs text-muted mt-1">Payments Processed</div>
+                    </div>
+                    <div class="stat-card text-center p-4 rounded-premium bg-white/60 backdrop-blur-sm border border-white/40">
+                        <div class="text-2xl lg:text-3xl font-bold text-teal-tropical"><span class="counter-value" data-target="500">0</span>+</div>
+                        <div class="text-xs text-muted mt-1">Data Entries</div>
+                    </div>
+                    <div class="stat-card text-center p-4 rounded-premium bg-white/60 backdrop-blur-sm border border-white/40">
+                        <div class="text-2xl lg:text-3xl font-bold text-orange-tropical"><span class="counter-value" data-target="20">0</span>+</div>
+                        <div class="text-xs text-muted mt-1">Site Surveys</div>
+                    </div>
+                    <div class="stat-card text-center p-4 rounded-premium bg-white/60 backdrop-blur-sm border border-white/40">
+                        <div class="counter-value text-2xl lg:text-3xl font-bold text-coral-peach" data-target="6">0</div>
+                        <div class="text-xs text-muted mt-1">Branches Covered</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Portrait -->
+            <div class="order-1 lg:order-2 flex justify-center">
+                <div class="portrait-container float-anim">
+                    <div class="portrait-ring"></div>
+                    <div class="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl shadow-teal-tropical/10">
+                        <img src="./images/WhatsApp_Image_2026-06-11_at_8.19.27_PM-removebg-preview.png" alt="Cindy Glorya Salindeho" class="w-full h-full object-cover" loading="eager" onerror="this.style.display='none'; this.parentElement.style.background='#1a1a1a'; this.parentElement.innerHTML='<div style=display:flex;align-items:center;justify-content:center;height:100%;color:#666;font-size:14px;>📷 Image</div>';">
+                    </div>
+                    <!-- Floating badges -->
+                    <div class="absolute -top-2 -right-2 glass-card px-4 py-2 !rounded-full animate-bounce" style="animation-duration: 3s;">
+                        <span class="text-sm font-semibold text-teal-tropical">🏗 Civil Engineer</span>
+                    </div>
+                    <div class="absolute -bottom-2 -left-4 glass-card px-4 py-2 !rounded-full animate-bounce" style="animation-duration: 4s; animation-delay: -1s;">
+                        <span class="text-sm font-semibold text-coral-peach">📋 Project Admin</span>
+                    </div>
+                    <div class="absolute top-1/2 -right-8 glass-card px-4 py-2 !rounded-full animate-bounce" style="animation-duration: 3.5s; animation-delay: -2s;">
+                        <span class="text-sm font-semibold text-orange-tropical">🚚 Logistics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+        <span class="text-xs text-muted font-medium">Scroll to explore</span>
+        <i data-lucide="chevron-down" class="w-5 h-5 text-teal-tropical"></i>
+    </div>
+</section>
+
+<!-- ==================== ABOUT SECTION ==================== -->
+<section id="about" class="py-24 lg:py-32 bg-sand-warm/50">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <span class="reveal inline-block text-sm font-semibold text-teal-tropical tracking-wider uppercase mb-3">About Me</span>
+            <h2 class="reveal reveal-delay-1 font-display text-4xl md:text-5xl font-bold leading-tight">
+                From Engineering Foundations<br>to <span class="text-teal-tropical">Project Excellence</span>
+            </h2>
+            <div class="reveal reveal-delay-2 section-divider mx-auto mt-6"></div>
+        </div>
+        <div class="grid lg:grid-cols-5 gap-12 items-start">
+            <div class="lg:col-span-2 reveal">
+                <div class="relative">
+                    <div class="rounded-premium overflow-hidden shadow-xl">
+                        <img src="./images/WhatsApp Image 2026-06-11 at 8.26.23 PM.jpeg" alt="Cindy at work" class="w-full h-80 object-cover" onerror="this.style.display='none'; this.parentElement.style.background='#1a1a1a'; this.parentElement.innerHTML='<div style=display:flex;align-items:center;justify-content:center;height:100%;color:#666;font-size:14px;>📷 Image</div>';">
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 glass-card px-5 py-3">
+                        <span class="font-display text-2xl font-bold text-teal-tropical">1</span>
+                        <span class="text-sm text-muted block">Year Experience</span>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-3">
+                <p class="reveal text-lg leading-relaxed text-muted mb-6">
+                    I am <strong class="text-charcoal">Cindy Glorya Salindeho</strong>, a Civil Engineering graduate from Universitas Sam Ratulangi with a GPA of 3.77/4.00, with a passion for creating order, efficiency, and measurable impact behind successful projects.
+                </p>
+                <p class="reveal reveal-delay-1 leading-relaxed text-muted mb-6">
+                    My experience spans project administration, logistics operations, procurement documentation, site inspections, budget planning (RAB), and document control. At PT Pegadaian Kanwil V Manado, I managed large-scale procurement documents including Berita Acara, SPK, Nota Dinas, SOA, and Addendum. I processed 180+ vendor payments through e-Trust system, participated in 20+ site surveys across 6 branches (Sorong, Jayapura, Palu, Gorontalo, Luwuk, and Manado), and managed 500+ project data entries using MS Excel. I also created 2D AutoCAD drawings to support outlet renovation and development.
+                </p>
+                <p class="reveal reveal-delay-2 leading-relaxed text-muted mb-8">
+                    What drives me is combining analytical thinking with practical execution—turning complex processes into structured systems. I am interested in building a career in Project Administration, Procurement, Document Control, and Project Control, supported by my proficiency in Microsoft Office Suite and AutoCAD.
+                </p>
+                <div class="reveal reveal-delay-3 grid grid-cols-2 gap-4">
+                    <div class="flex items-center gap-3 p-3 rounded-xl bg-white/70">
+                        <div class="w-10 h-10 rounded-lg bg-teal-tropical/10 flex items-center justify-center">
+                            <i data-lucide="building-2" class="w-5 h-5 text-teal-tropical"></i>
+                        </div>
+                        <span class="text-sm font-medium">Civil Engineer</span>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 rounded-xl bg-white/70">
+                        <div class="w-10 h-10 rounded-lg bg-coral-peach/10 flex items-center justify-center">
+                            <i data-lucide="clipboard-list" class="w-5 h-5 text-coral-peach"></i>
+                        </div>
+                        <span class="text-sm font-medium">Project Admin</span>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 rounded-xl bg-white/70">
+                        <div class="w-10 h-10 rounded-lg bg-orange-tropical/10 flex items-center justify-center">
+                            <i data-lucide="truck" class="w-5 h-5 text-orange-tropical"></i>
+                        </div>
+                        <span class="text-sm font-medium">Logistics Pro</span>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 rounded-xl bg-white/70">
+                        <div class="w-10 h-10 rounded-lg bg-teal-tropical/10 flex items-center justify-center">
+                            <i data-lucide="file-check" class="w-5 h-5 text-teal-tropical"></i>
+                        </div>
+                        <span class="text-sm font-medium">Document Control</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== EXPERTISE SECTION ==================== -->
+<section id="expertise" class="py-24 lg:py-32">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <span class="reveal inline-block text-sm font-semibold text-teal-tropical tracking-wider uppercase mb-3">What I Do</span>
+            <h2 class="reveal reveal-delay-1 font-display text-4xl md:text-5xl font-bold">
+                Featured <span class="text-teal-tropical">Expertise</span>
+            </h2>
+            <div class="reveal reveal-delay-2 section-divider mx-auto mt-6"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Card 1 -->
+            <div class="reveal glass-card p-8 group">
+                <div class="w-14 h-14 rounded-2xl bg-teal-tropical/10 flex items-center justify-center mb-5 group-hover:bg-teal-tropical group-hover:text-white transition-all duration-300">
+                    <i data-lucide="clipboard-list" class="w-7 h-7 text-teal-tropical group-hover:text-white transition-colors"></i>
+                </div>
+                <h3 class="font-display text-xl font-bold mb-3">Project Administration</h3>
+                <p class="text-muted text-sm leading-relaxed">Managing project documentation and operational workflows with precision and systematic organization.</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="reveal reveal-delay-1 glass-card p-8 group">
+                <div class="w-14 h-14 rounded-2xl bg-coral-peach/10 flex items-center justify-center mb-5 group-hover:bg-coral-peach group-hover:text-white transition-all duration-300">
+                    <i data-lucide="truck" class="w-7 h-7 text-coral-peach group-hover:text-white transition-colors"></i>
+                </div>
+                <h3 class="font-display text-xl font-bold mb-3">Logistics Coordination</h3>
+                <p class="text-muted text-sm leading-relaxed">Tracking logistics and procurement activities across multi-site regional operations efficiently.</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="reveal reveal-delay-2 glass-card p-8 group">
+                <div class="w-14 h-14 rounded-2xl bg-orange-tropical/10 flex items-center justify-center mb-5 group-hover:bg-orange-tropical group-hover:text-white transition-all duration-300">
+                    <i data-lucide="file-check-2" class="w-7 h-7 text-orange-tropical group-hover:text-white transition-colors"></i>
+                </div>
+                <h3 class="font-display text-xl font-bold mb-3">Document Control</h3>
+                <p class="text-muted text-sm leading-relaxed">Managing contracts, SPKs, reports, and compliance records with 99% document availability.</p>
+            </div>
+            <!-- Card 4 -->
+            <div class="reveal glass-card p-8 group">
+                <div class="w-14 h-14 rounded-2xl bg-teal-tropical/10 flex items-center justify-center mb-5 group-hover:bg-teal-tropical group-hover:text-white transition-all duration-300">
+                    <i data-lucide="calculator" class="w-7 h-7 text-teal-tropical group-hover:text-white transition-colors"></i>
+                </div>
+                <h3 class="font-display text-xl font-bold mb-3">Budget Planning</h3>
+                <p class="text-muted text-sm leading-relaxed">Preparing RAB documentation and supporting cost-control initiatives for project financial health.</p>
+            </div>
+            <!-- Card 5 -->
+            <div class="reveal reveal-delay-1 glass-card p-8 group">
+                <div class="w-14 h-14 rounded-2xl bg-coral-peach/10 flex items-center justify-center mb-5 group-hover:bg-coral-peach group-hover:text-white transition-all duration-300">
+                    <i data-lucide="hard-hat" class="w-7 h-7 text-coral-peach group-hover:text-white transition-colors"></i>
+                </div>
+                <h3 class="font-display text-xl font-bold mb-3">Site Inspection</h3>
+                <p class="text-muted text-sm leading-relaxed">Field verification and project monitoring ensuring quality compliance across all branches.</p>
+            </div>
+            <!-- Card 6 -->
+            <div class="reveal reveal-delay-2 glass-card p-8 group">
+                <div class="w-14 h-14 rounded-2xl bg-orange-tropical/10 flex items-center justify-center mb-5 group-hover:bg-orange-tropical group-hover:text-white transition-all duration-300">
+                    <i data-lucide="bar-chart-3" class="w-7 h-7 text-orange-tropical group-hover:text-white transition-colors"></i>
+                </div>
+                <h3 class="font-display text-xl font-bold mb-3">Data Reporting</h3>
+                <p class="text-muted text-sm leading-relaxed">Excel-based operational reporting and project analytics with 98% data accuracy rate.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== EXPERIENCE SECTION ==================== -->
+<section id="experience" class="py-24 lg:py-32 bg-sand-warm/50">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <span class="reveal inline-block text-sm font-semibold text-teal-tropical tracking-wider uppercase mb-3">Career Path</span>
+            <h2 class="reveal reveal-delay-1 font-display text-4xl md:text-5xl font-bold">
+                Professional <span class="text-teal-tropical">Experience</span>
+            </h2>
+            <div class="reveal reveal-delay-2 section-divider mx-auto mt-6"></div>
+        </div>
+
+        <div class="relative">
+            <!-- Timeline 1: PT Pegadaian -->
+            <div class="reveal mb-16 relative">
+                <div class="glass-card p-8 lg:p-10 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-teal-tropical to-coral-peach rounded-full"></div>
+                    <div class="pl-6">
+                        <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                            <div>
+                                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-tropical/10 text-teal-tropical text-xs font-semibold mb-3">
+                                    <i data-lucide="briefcase" class="w-3 h-3"></i> Oct 2023 — Oct 2024
+                                </span>
+                                <h3 class="font-display text-2xl font-bold">PT Pegadaian Kanwil V Manado</h3>
+                                <p class="text-teal-tropical font-semibold mt-1">Administrator Dept. Logistik (Paid Internship)</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-2xl bg-teal-tropical/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="building-2" class="w-6 h-6 text-teal-tropical"></i>
+                            </div>
+                        </div>
+                        <p class="text-muted leading-relaxed mb-6">
+                            Managed large-scale procurement and project administration documents including Berita Acara, Surat Perintah Kerja (SPK), Nota Dinas, Surat Otorisasi Anggaran (SOA), and Addendum through verification, digitization, scanning, and archiving processes. Processed 180+ vendor payment submissions through the e-Trust Pegadaian system, including document completeness verification, data input, and administrative monitoring. Participated in 20+ outlet standardization project site surveys across 6 branches (Sorong, Jayapura, Palu, Gorontalo, Luwuk, and Manado), conducting field verification, volume calculation, defect list preparation, and survey report compilation. Managed 500+ project data entries using MS Excel including vendor data, RAB, and CCO. Created 2D layout drawings using AutoCAD to support outlet renovation and development. Coordinated with Procurement, Finance, Logistics, Engineering units, and vendors to ensure smooth project administration and payment processes. Supported internal audit (SPI) preparation through document verification, grouping, and archive management according to administrative standards.
+                        </p>
+                        <!-- Achievements -->
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-6">
+                            <div class="flex items-center gap-2 text-sm">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-tropical flex-shrink-0"></i>
+                                <span>6 regional branches surveyed</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-tropical flex-shrink-0"></i>
+                                <span>180+ vendor payments processed</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-tropical flex-shrink-0"></i>
+                                <span>500+ data entries managed</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-orange-tropical flex-shrink-0"></i>
+                                <span>20+ site surveys completed</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-tropical flex-shrink-0"></i>
+                                <span>2D AutoCAD drawings created</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-coral-peach flex-shrink-0"></i>
+                                <span>Audit-ready documentation</span>
+                            </div>
+                        </div>
+                        <!-- Featured Project -->
+                        <div class="p-5 rounded-premium bg-gradient-to-br from-teal-tropical/5 to-coral-peach/5 border border-teal-tropical/10">
+                            <span class="text-xs font-semibold text-orange-tropical uppercase tracking-wider">Featured Project</span>
+                            <h4 class="font-display text-lg font-bold mt-1 mb-2">Regional Outlet Standardization Program</h4>
+                            <p class="text-sm text-muted mb-3">Administrator Dept. Logistik (Paid Internship)</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-full bg-teal-tropical/10 text-teal-tropical text-xs font-medium">180+ Payments</span>
+                                <span class="px-3 py-1 rounded-full bg-coral-peach/10 text-coral-peach text-xs font-medium">500+ Data Entries</span>
+                                <span class="px-3 py-1 rounded-full bg-orange-tropical/10 text-orange-tropical text-xs font-medium">6 Branches</span>
+                                <span class="px-3 py-1 rounded-full bg-teal-tropical/10 text-teal-tropical text-xs font-medium">20+ Surveys</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline 2: Dinas PUPR -->
+            <div class="reveal mb-8 relative">
+                <div class="glass-card p-8 lg:p-10 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-coral-peach to-orange-tropical rounded-full"></div>
+                    <div class="pl-6">
+                        <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                            <div>
+                                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-coral-peach/10 text-coral-peach text-xs font-semibold mb-3">
+                                    <i data-lucide="briefcase" class="w-3 h-3"></i> Mar 2021 — Jun 2021
+                                </span>
+                                <h3 class="font-display text-2xl font-bold">Dinas PUPR Sulawesi Utara</h3>
+                                <p class="text-coral-peach font-semibold mt-1">Intern – Road & Bridge Division (Bina Marga)</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-2xl bg-coral-peach/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="landmark" class="w-6 h-6 text-coral-peach"></i>
+                            </div>
+                        </div>
+                        <!-- Featured Project -->
+                        <div class="p-5 rounded-premium bg-gradient-to-br from-coral-peach/5 to-orange-tropical/5 border border-coral-peach/10">
+                            <span class="text-xs font-semibold text-orange-tropical uppercase tracking-wider">Featured Project</span>
+                            <h4 class="font-display text-lg font-bold mt-1 mb-2">Road & Bridge Infrastructure Survey Program</h4>
+                            <p class="text-sm text-muted mb-3">Intern – Road & Bridge Division (Bina Marga)</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-full bg-coral-peach/10 text-coral-peach text-xs font-medium">Site Surveys</span>
+                                <span class="px-3 py-1 rounded-full bg-orange-tropical/10 text-orange-tropical text-xs font-medium">Field Measurements</span>
+                                <span class="px-3 py-1 rounded-full bg-teal-tropical/10 text-teal-tropical text-xs font-medium">Tender & Pre-Qualification</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== PROJECTS SECTION ==================== -->
+<section id="projects" class="py-24 lg:py-32">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <span class="reveal inline-block text-sm font-semibold text-teal-tropical tracking-wider uppercase mb-3">Portfolio</span>
+            <h2 class="reveal reveal-delay-1 font-display text-4xl md:text-5xl font-bold">
+                Featured <span class="text-teal-tropical">Projects</span>
+            </h2>
+            <div class="reveal reveal-delay-2 section-divider mx-auto mt-6"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Project 1 -->
+            <div class="reveal glass-card overflow-hidden cursor-pointer group" onclick="openModal(0)">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="./images/WhatsApp Image 2026-06-11 at 7.42.06 PM.jpeg" alt="Regional Outlet Standardization" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.style.display='none'; this.parentElement.style.background='#1a1a1a'; this.parentElement.innerHTML='<div style=display:flex;align-items:center;justify-content:center;height:100%;color:#666;font-size:14px;>📷 Image</div>';">
+                    <div class="absolute bottom-2 right-2 flex items-center gap-1 px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-sm text-white text-xs font-medium">
+                        <i data-lucide="images" class="w-3.5 h-3.5"></i> 6 Photos
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="px-2.5 py-0.5 rounded-full bg-teal-tropical/10 text-teal-tropical text-xs font-medium">Project Admin</span>
+                        <span class="px-2.5 py-0.5 rounded-full bg-coral-peach/10 text-coral-peach text-xs font-medium">Logistics</span>
+                    </div>
+                    <h3 class="font-display text-lg font-bold mb-2 group-hover:text-teal-tropical transition-colors">Regional Outlet Standardization & Document Control</h3>
+                    <p class="text-sm text-muted mb-4">Managed procurement documents (SPK, SOA, Addendum), processed 180+ vendor payments, and conducted 20+ site surveys across 6 branches.</p>
+                    <div class="flex items-center gap-2 text-teal-tropical text-sm font-semibold">
+                        View Case Study <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="reveal reveal-delay-1 glass-card overflow-hidden cursor-pointer group" onclick="openModal(1)">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="./images/people1 (1).jpeg" alt="Multi-Site Documentation System" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.style.display='none'; this.parentElement.style.background='#1a1a1a'; this.parentElement.innerHTML='<div style=display:flex;align-items:center;justify-content:center;height:100%;color:#666;font-size:14px;>📷 Image</div>';">
+                    <div class="absolute bottom-2 right-2 flex items-center gap-1 px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-sm text-white text-xs font-medium">
+                        <i data-lucide="images" class="w-3.5 h-3.5"></i> 6 Photos
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="px-2.5 py-0.5 rounded-full bg-teal-tropical/10 text-teal-tropical text-xs font-medium">Document Control</span>
+                        <span class="px-2.5 py-0.5 rounded-full bg-orange-tropical/10 text-orange-tropical text-xs font-medium">Reporting</span>
+                    </div>
+                    <h3 class="font-display text-lg font-bold mb-2 group-hover:text-teal-tropical transition-colors">Vendor Payment & e-Trust Administration</h3>
+                    <p class="text-sm text-muted mb-4">Processed 180+ vendor payment submissions through e-Trust Pegadaian with document verification and administrative monitoring.</p>
+                    <div class="flex items-center gap-2 text-teal-tropical text-sm font-semibold">
+                        View Case Study <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="reveal reveal-delay-2 glass-card overflow-hidden cursor-pointer group" onclick="openModal(2)">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="./images/WhatsApp Image 2026-06-12 at 4.55.18 PM.jpeg" alt="Procurement & Logistics Initiative" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.style.display='none'; this.parentElement.style.background='#1a1a1a'; this.parentElement.innerHTML='<div style=display:flex;align-items:center;justify-content:center;height:100%;color:#666;font-size:14px;>📷 Image</div>';">
+                    <div class="absolute bottom-2 right-2 flex items-center gap-1 px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-sm text-white text-xs font-medium">
+                        <i data-lucide="images" class="w-3.5 h-3.5"></i> 3 Photos
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="px-2.5 py-0.5 rounded-full bg-coral-peach/10 text-coral-peach text-xs font-medium">Procurement</span>
+                        <span class="px-2.5 py-0.5 rounded-full bg-teal-tropical/10 text-teal-tropical text-xs font-medium">Logistics</span>
+                    </div>
+                    <h3 class="font-display text-lg font-bold mb-2 group-hover:text-teal-tropical transition-colors">Site Survey & Outlet Standardization</h3>
+                    <p class="text-sm text-muted mb-4">Participated in 20+ outlet standardization site surveys across 6 branches including field verification, volume calculation, and defect list preparation.</p>
+                    <div class="flex items-center gap-2 text-teal-tropical text-sm font-semibold">
+                        View Case Study <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 4 -->
+            <div class="reveal glass-card overflow-hidden cursor-pointer group" onclick="openModal(3)">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="./images/WhatsApp Image 2026-06-12 at 2.09.52 PM.jpeg" alt="Road & Bridge Survey" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.style.display='none'; this.parentElement.style.background='#1a1a1a'; this.parentElement.innerHTML='<div style=display:flex;align-items:center;justify-content:center;height:100%;color:#666;font-size:14px;>📷 Image</div>';">
+                    <div class="absolute bottom-2 right-2 flex items-center gap-1 px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-sm text-white text-xs font-medium">
+                        <i data-lucide="images" class="w-3.5 h-3.5"></i> 3 Photos
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="px-2.5 py-0.5 rounded-full bg-orange-tropical/10 text-orange-tropical text-xs font-medium">Civil Engineering</span>
+                    </div>
+                    <h3 class="font-display text-lg font-bold mb-2 group-hover:text-teal-tropical transition-colors">Road Infrastructure Survey & Tender Support</h3>
+                    <p class="text-sm text-muted mb-4">Conducted road infrastructure site surveys, field measurements with MS Excel, and participated in pre-qualification and tender processes at Dinas PUPR.</p>
+                    <div class="flex items-center gap-2 text-teal-tropical text-sm font-semibold">
+                        View Case Study <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 5 -->
+            <div class="reveal reveal-delay-1 glass-card overflow-hidden cursor-pointer group" onclick="openModal(4)">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="./images/people3.jpeg" alt="Reporting & Budget System" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.style.display='none'; this.parentElement.style.background='#1a1a1a'; this.parentElement.innerHTML='<div style=display:flex;align-items:center;justify-content:center;height:100%;color:#666;font-size:14px;>📷 Image</div>';">
+                    <div class="absolute bottom-2 right-2 flex items-center gap-1 px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-sm text-white text-xs font-medium">
+                        <i data-lucide="images" class="w-3.5 h-3.5"></i> 9 Photos
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="px-2.5 py-0.5 rounded-full bg-teal-tropical/10 text-teal-tropical text-xs font-medium">Analytics</span>
+                        <span class="px-2.5 py-0.5 rounded-full bg-coral-peach/10 text-coral-peach text-xs font-medium">Budget Planning</span>
+                    </div>
+                    <h3 class="font-display text-lg font-bold mb-2 group-hover:text-teal-tropical transition-colors">Project Data Management & AutoCAD Support</h3>
+                    <p class="text-sm text-muted mb-4">Managed 500+ project data entries using MS Excel including vendor data, RAB, and CCO. Created 2D AutoCAD drawings for outlet renovation.</p>
+                    <div class="flex items-center gap-2 text-teal-tropical text-sm font-semibold">
+                        View Case Study <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- CTA Card -->
+            <div class="reveal reveal-delay-2 glass-card p-8 flex flex-col items-center justify-center text-center bg-gradient-to-br from-teal-tropical/5 to-coral-peach/5">
+                <div class="w-16 h-16 rounded-full bg-teal-tropical/10 flex items-center justify-center mb-4">
+                    <i data-lucide="sparkles" class="w-8 h-8 text-teal-tropical"></i>
+                </div>
+                <h3 class="font-display text-xl font-bold mb-2">Want to Know More?</h3>
+                <p class="text-sm text-muted mb-4">Let's discuss how my expertise can add value to your projects.</p>
+                <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-teal-tropical text-white text-sm font-semibold hover:shadow-lg hover:shadow-teal-tropical/25 transition-all">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i> Get in Touch
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== IMPACT DASHBOARD ==================== -->
+<section class="py-24 lg:py-32 bg-charcoal relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute w-96 h-96 rounded-full bg-teal-tropical blur-[120px] -top-48 -left-48"></div>
+        <div class="absolute w-96 h-96 rounded-full bg-coral-peach blur-[120px] -bottom-48 -right-48"></div>
+    </div>
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+            <span class="reveal inline-block text-sm font-semibold text-teal-tropical tracking-wider uppercase mb-3">Impact</span>
+            <h2 class="reveal reveal-delay-1 font-display text-4xl md:text-5xl font-bold text-white">
+                Project Impact <span class="text-teal-tropical">Dashboard</span>
+            </h2>
+            <div class="reveal reveal-delay-2 section-divider mx-auto mt-6"></div>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <div class="reveal glass-dark p-6 text-center stat-card">
+                <div class="text-3xl lg:text-4xl font-bold text-teal-tropical counter-value" data-target="1000">0</div>
+                <div class="text-xs text-white/60 mt-2">Records Managed</div>
+            </div>
+            <div class="reveal reveal-delay-1 glass-dark p-6 text-center stat-card">
+                <div class="text-3xl lg:text-4xl font-bold text-teal-tropical"><span class="counter-value" data-target="98">0</span>%</div>
+                <div class="text-xs text-white/60 mt-2">Reporting Accuracy</div>
+            </div>
+            <div class="reveal reveal-delay-2 glass-dark p-6 text-center stat-card">
+                <div class="text-3xl lg:text-4xl font-bold text-teal-tropical"><span class="counter-value" data-target="99">0</span>%</div>
+                <div class="text-xs text-white/60 mt-2">Doc Availability</div>
+            </div>
+            <div class="reveal reveal-delay-3 glass-dark p-6 text-center stat-card">
+                <div class="text-3xl lg:text-4xl font-bold text-orange-tropical"><span class="counter-value" data-target="30">0</span>%</div>
+                <div class="text-xs text-white/60 mt-2">Efficiency Boost</div>
+            </div>
+            <div class="reveal reveal-delay-4 glass-dark p-6 text-center stat-card">
+                <div class="text-3xl lg:text-4xl font-bold text-coral-peach counter-value" data-target="6">0</div>
+                <div class="text-xs text-white/60 mt-2">Regional Branches</div>
+            </div>
+            <div class="reveal reveal-delay-5 glass-dark p-6 text-center stat-card">
+                <div class="text-3xl lg:text-4xl font-bold text-teal-tropical"><span class="counter-value" data-target="100">0</span>%</div>
+                <div class="text-xs text-white/60 mt-2">On-Time Support</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== JOURNEY SECTION ==================== -->
+<section id="journey" class="py-24 lg:py-32 bg-sand-warm/50">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <span class="reveal inline-block text-sm font-semibold text-teal-tropical tracking-wider uppercase mb-3">My Path</span>
+            <h2 class="reveal reveal-delay-1 font-display text-4xl md:text-5xl font-bold">
+                Career <span class="text-teal-tropical">Journey</span>
+            </h2>
+            <div class="reveal reveal-delay-2 section-divider mx-auto mt-6"></div>
+        </div>
+        <div class="journey-path">
+            <div class="reveal journey-node mb-10">
+                <div class="journey-dot" style="background: #00CEC8; box-shadow: 0 0 0 3px #FFFDF8, 0 0 0 6px #00CEC8;"></div>
+                <div class="glass-card p-6">
+                    <span class="text-2xl mb-2 block">🎓</span>
+                    <h4 class="font-display text-lg font-bold">Civil Engineering Education</h4>
+                    <p class="text-sm text-muted mt-1">Universitas Sam Ratulangi, Manado — Bachelor of Civil Engineering (GPA 3.77/4.00). Built a strong foundation in construction management, technical analysis, and structural design.</p>
+                </div>
+            </div>
+            <div class="reveal reveal-delay-1 journey-node mb-10">
+                <div class="journey-dot" style="background: #FF9C5F; box-shadow: 0 0 0 3px #FFFDF8, 0 0 0 6px #FF9C5F;"></div>
+                <div class="glass-card p-6">
+                    <span class="text-2xl mb-2 block">🏗</span>
+                    <h4 class="font-display text-lg font-bold">Infrastructure & Construction Exposure</h4>
+                    <p class="text-sm text-muted mt-1">Interned at Dinas PUPR Sulawesi Utara (Mar–Jun 2021) — conducted road infrastructure site surveys, field data processing with MS Excel, learned dredging and asphalt maintenance mechanisms, participated in pre-qualification and tender processes, created AutoCAD structural designs and RAB for drainage projects.</p>
+                </div>
+            </div>
+            <div class="reveal reveal-delay-2 journey-node mb-10">
+                <div class="journey-dot" style="background: #00CEC8; box-shadow: 0 0 0 3px #FFFDF8, 0 0 0 6px #00CEC8;"></div>
+                <div class="glass-card p-6">
+                    <span class="text-2xl mb-2 block">📋</span>
+                    <h4 class="font-display text-lg font-bold">Project Administration</h4>
+                    <p class="text-sm text-muted mt-1">At PT Pegadaian Kanwil V Manado (Oct 2023–Oct 2024), mastered large-scale document management including procurement documents, SPK, SOA, and Addendum. Verified, digitized, scanned, and archived documents to support operational smoothness.</p>
+                </div>
+            </div>
+            <div class="reveal reveal-delay-3 journey-node mb-10">
+                <div class="journey-dot" style="background: #EB4203; box-shadow: 0 0 0 3px #FFFDF8, 0 0 0 6px #EB4203;"></div>
+                <div class="glass-card p-6">
+                    <span class="text-2xl mb-2 block">🚚</span>
+                    <h4 class="font-display text-lg font-bold">Logistics & Procurement Coordination</h4>
+                    <p class="text-sm text-muted mt-1">Processed 180+ vendor payments through e-Trust system, coordinated with Procurement, Finance, Logistics, Engineering units and vendors. Managed vendor data, RAB, and CCO using MS Excel. Supported internal audit (SPI) preparation.</p>
+                </div>
+            </div>
+            <div class="reveal reveal-delay-4 journey-node mb-10">
+                <div class="journey-dot" style="background: #FF9C5F; box-shadow: 0 0 0 3px #FFFDF8, 0 0 0 6px #FF9C5F;"></div>
+                <div class="glass-card p-6">
+                    <span class="text-2xl mb-2 block">📊</span>
+                    <h4 class="font-display text-lg font-bold">Data Reporting & Technical Drawing</h4>
+                    <p class="text-sm text-muted mt-1">Managed 500+ project data entries using MS Excel for reporting and analysis. Created 2D AutoCAD drawings for outlet renovation support. Developed content creation skills through spiritual webinar production reaching 2,000+ viewers.</p>
+                </div>
+            </div>
+            <div class="reveal reveal-delay-5 journey-node">
+                <div class="journey-dot" style="background: #00CEC8; box-shadow: 0 0 0 3px #FFFDF8, 0 0 0 6px #00CEC8; animation: pulse 2s infinite;"></div>
+                <div class="glass-card p-6 border-2 border-teal-tropical/20 bg-gradient-to-br from-teal-tropical/5 to-coral-peach/5">
+                    <span class="text-2xl mb-2 block">🚀</span>
+                    <h4 class="font-display text-lg font-bold">Future: Project Management Leadership</h4>
+                    <p class="text-sm text-muted mt-1">Advancing toward project management, combining engineering expertise with operational leadership.</p>
+                    <span class="inline-flex items-center gap-1 mt-3 text-teal-tropical text-sm font-semibold">
+                        Currently pursuing <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SKILLS SECTION ==================== -->
+<section id="skills" class="py-24 lg:py-32">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <span class="reveal inline-block text-sm font-semibold text-teal-tropical tracking-wider uppercase mb-3">Capabilities</span>
+            <h2 class="reveal reveal-delay-1 font-display text-4xl md:text-5xl font-bold">
+                Skills & <span class="text-teal-tropical">Expertise</span>
+            </h2>
+            <div class="reveal reveal-delay-2 section-divider mx-auto mt-6"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-12">
+            <!-- Technical -->
+            <div class="reveal">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-teal-tropical/10 flex items-center justify-center">
+                        <i data-lucide="wrench" class="w-5 h-5 text-teal-tropical"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold">Technical Skills</h3>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <span class="skill-badge">Project Administration</span>
+                    <span class="skill-badge">Procurement</span>
+                    <span class="skill-badge">Logistics Management</span>
+                    <span class="skill-badge">Document Control</span>
+                    <span class="skill-badge">Budget Planning</span>
+                    <span class="skill-badge">RAB Preparation</span>
+                    <span class="skill-badge">Site Inspection</span>
+                    <span class="skill-badge">Project Reporting</span>
+                    <span class="skill-badge">Data Analysis</span>
+                    <span class="skill-badge">AutoCAD</span>
+                    <span class="skill-badge">Microsoft Excel</span>
+                    <span class="skill-badge">Microsoft Office</span>
+                    <span class="skill-badge">Canva</span>
+                </div>
+            </div>
+            <!-- Soft Skills -->
+            <div class="reveal reveal-delay-2">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-coral-peach/10 flex items-center justify-center">
+                        <i data-lucide="heart-handshake" class="w-5 h-5 text-coral-peach"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold">Soft Skills</h3>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <span class="skill-badge" style="background: rgba(255,156,95,0.08); border-color: rgba(255,156,95,0.2);">Analytical Thinking</span>
+                    <span class="skill-badge" style="background: rgba(255,156,95,0.08); border-color: rgba(255,156,95,0.2);">Communication</span>
+                    <span class="skill-badge" style="background: rgba(255,156,95,0.08); border-color: rgba(255,156,95,0.2);">Team Collaboration</span>
+                    <span class="skill-badge" style="background: rgba(255,156,95,0.08); border-color: rgba(255,156,95,0.2);">Adaptability</span>
+                    <span class="skill-badge" style="background: rgba(255,156,95,0.08); border-color: rgba(255,156,95,0.2);">Problem Solving</span>
+                    <span class="skill-badge" style="background: rgba(255,156,95,0.08); border-color: rgba(255,156,95,0.2);">Time Management</span>
+                    <span class="skill-badge" style="background: rgba(255,156,95,0.08); border-color: rgba(255,156,95,0.2);">Attention to Detail</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== PERSONAL STORY SECTION ==================== -->
+<section class="py-24 lg:py-32 bg-sand-warm/50">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <span class="reveal inline-block text-sm font-semibold text-teal-tropical tracking-wider uppercase mb-3">Beyond Work</span>
+            <h2 class="reveal reveal-delay-1 font-display text-4xl md:text-5xl font-bold">
+                More Than <span class="text-teal-tropical">Engineering</span>
+            </h2>
+            <div class="reveal reveal-delay-2 section-divider mx-auto mt-6"></div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="reveal glass-card p-8 text-center">
+                <div class="w-16 h-16 rounded-full bg-teal-tropical/10 flex items-center justify-center mx-auto mb-5">
+                    <i data-lucide="book-open" class="w-8 h-8 text-teal-tropical"></i>
+                </div>
+                <h3 class="font-display text-xl font-bold mb-3">Lifelong Learner</h3>
+                <p class="text-sm text-muted leading-relaxed">Committed to continuous professional growth and expanding my skill set across project management and operational excellence.</p>
+            </div>
+            <div class="reveal reveal-delay-1 glass-card p-8 text-center">
+                <div class="w-16 h-16 rounded-full bg-coral-peach/10 flex items-center justify-center mx-auto mb-5">
+                    <i data-lucide="users" class="w-8 h-8 text-coral-peach"></i>
+                </div>
+                <h3 class="font-display text-xl font-bold mb-3">Community Contributor</h3>
+                <p class="text-sm text-muted leading-relaxed">Active in KMK Fatek UNSRAT (Liturgy Division, 2020–2022) organizing spiritual webinars with 100+ participants per session. Produced creative spiritual content reaching 2,000+ viewers. Member of Himpunan Mahasiswa Teknik Sipil UNSRAT (2021–2022).</p>
+            </div>
+            <div class="reveal reveal-delay-2 glass-card p-8 text-center">
+                <div class="w-16 h-16 rounded-full bg-orange-tropical/10 flex items-center justify-center mx-auto mb-5">
+                    <i data-lucide="brain" class="w-8 h-8 text-orange-tropical"></i>
+                </div>
+                <h3 class="font-display text-xl font-bold mb-3">Structured Thinker</h3>
+                <p class="text-sm text-muted leading-relaxed">Passionate about transforming complexity into efficient systems—turning chaos into clarity through methodical approaches.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== TESTIMONIALS SECTION ==================== -->
+<section id="testimonials" class="py-24 lg:py-32">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <span class="reveal inline-block text-sm font-semibold text-teal-tropical tracking-wider uppercase mb-3">Endorsements</span>
+            <h2 class="reveal reveal-delay-1 font-display text-4xl md:text-5xl font-bold">
+                What People <span class="text-teal-tropical">Say</span>
+            </h2>
+            <div class="reveal reveal-delay-2 section-divider mx-auto mt-6"></div>
+        </div>
+        <div class="reveal relative overflow-hidden rounded-premium">
+            <div class="testimonial-track" id="testimonialTrack">
+                <!-- Testimonial 1 -->
+                <div class="w-full flex-shrink-0 px-2">
+                    <div class="glass-card p-8 lg:p-10 text-center max-w-2xl mx-auto">
+                        <div class="flex justify-center mb-4">
+                            <i data-lucide="star" class="w-5 h-5 text-coral-peach fill-coral-peach"></i>
+                            <i data-lucide="star" class="w-5 h-5 text-coral-peach fill-coral-peach"></i>
+                            <i data-lucide="star" class="w-5 h-5 text-coral-peach fill-coral-peach"></i>
+                            <i data-lucide="star" class="w-5 h-5 text-coral-peach fill-coral-peach"></i>
+                            <i data-lucide="star" class="w-5 h-5 text-coral-peach fill-coral-peach"></i>
+                        </div>
+                        <p class="text-lg leading-relaxed text-muted mb-6 font-display italic">"Cindy's attention to detail in managing procurement documents and processing vendor payments was exceptional. She handled 180+ payment submissions with precision and maintained excellent document organization throughout her internship."</p>
+                        <div class="w-14 h-14 rounded-full bg-teal-tropical/10 flex items-center justify-center mx-auto mb-3">
+                            <i data-lucide="user" class="w-7 h-7 text-teal-tropical"></i>
+                        </div>
+                        <h4 class="font-display font-bold">Diny Sumolang</h4>
+                        <p class="text-sm text-teal-tropical">In House Consultant</p>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="w-full flex-shrink-0 px-2">
+                    <div class="glass-card p-8 lg:p-10 text-center max-w-2xl mx-auto">
+                        <div class="flex justify-center mb-4">
+                            <i data-lucide="star" class="w-5 h-5 text-coral-peach fill-coral-peach"></i>
+                            <i data-lucide="star" class="w-5 h-5 text-coral-peach fill-coral-peach"></i>
+                            <i data-lucide="star" class="w-5 h-5 text-coral-peach fill-coral-peach"></i>
+                            <i data-lucide="star" class="w-5 h-5 text-coral-peach fill-coral-peach"></i>
+                            <i data-lucide="star" class="w-5 h-5 text-coral-peach fill-coral-peach"></i>
+                        </div>
+                        <p class="text-lg leading-relaxed text-muted mb-6 font-display italic">"Working alongside Cindy during our internship at Dinas PUPR was a valuable experience. Her dedication to field surveys, data processing, and technical documentation showed strong engineering fundamentals and reliability."</p>
+                        <div class="w-14 h-14 rounded-full bg-coral-peach/10 flex items-center justify-center mx-auto mb-3">
+                            <i data-lucide="user" class="w-7 h-7 text-coral-peach"></i>
+                        </div>
+                        <h4 class="font-display font-bold">Mayank Natasyah</h4>
+                        <p class="text-sm text-coral-peach">Project Team Member at PUPR</p>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="w-full flex-shrink-0 px-2">
+                    <div class="glass-card p-8 lg:p-10 text-center max-w-2xl mx-auto">
+                        <div class="flex justify-center mb-4">
+                            <i data-lucide="star" class="w-5 h-5 text-coral-peach fill-coral-peach"></i>
+                            <i data-lucide="star" class="w-5 h-5 text-coral-peach fill-coral-peach"></i>
+                            <i data-lucide="star" class="w-5 h-5 text-coral-peach fill-coral-peach"></i>
+                            <i data-lucide="star" class="w-5 h-5 text-coral-peach fill-coral-peach"></i>
+                            <i data-lucide="star" class="w-5 h-5 text-coral-peach fill-coral-peach"></i>
+                        </div>
+                        <p class="text-lg leading-relaxed text-muted mb-6 font-display italic">"Cindy's structured approach to logistics and procurement administration brought significant improvements to our operational workflows. Her ability to manage 500+ data entries and support audit preparation was invaluable to the team."</p>
+                        <div class="w-14 h-14 rounded-full bg-orange-tropical/10 flex items-center justify-center mx-auto mb-3">
+                            <i data-lucide="user" class="w-7 h-7 text-orange-tropical"></i>
+                        </div>
+                        <h4 class="font-display font-bold">Mustafa Domili</h4>
+                        <p class="text-sm text-orange-tropical">Head of Logistics Department, Pegadaian Kanwil V Manado</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Carousel Controls -->
+            <div class="flex justify-center items-center gap-4 mt-8">
+                <button onclick="slideTestimonial(-1)" class="w-10 h-10 rounded-full border border-charcoal/15 flex items-center justify-center hover:bg-teal-tropical hover:text-white hover:border-teal-tropical transition-all">
+                    <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                </button>
+                <div class="flex gap-2" id="carouselDots">
+                    <button class="w-3 h-3 rounded-full bg-teal-tropical transition-all" data-dot="0"></button>
+                    <button class="w-3 h-3 rounded-full bg-charcoal/20 transition-all" data-dot="1"></button>
+                    <button class="w-3 h-3 rounded-full bg-charcoal/20 transition-all" data-dot="2"></button>
+                </div>
+                <button onclick="slideTestimonial(1)" class="w-10 h-10 rounded-full border border-charcoal/15 flex items-center justify-center hover:bg-teal-tropical hover:text-white hover:border-teal-tropical transition-all">
+                    <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== CONTACT SECTION ==================== -->
+<section id="contact" class="py-24 lg:py-32 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-teal-tropical via-teal-tropical/90 to-orange-tropical"></div>
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute w-[500px] h-[500px] rounded-full bg-white blur-[150px] top-0 right-0"></div>
+    </div>
+    <div class="max-w-5xl mx-auto px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+            <span class="reveal inline-block text-sm font-semibold text-white/80 tracking-wider uppercase mb-3">Get in Touch</span>
+            <h2 class="reveal reveal-delay-1 font-display text-4xl md:text-5xl font-bold text-white">
+                Let's Build Something<br><span class="text-white/90">Meaningful Together</span>
+            </h2>
+            <p class="reveal reveal-delay-2 text-white/70 mt-4 max-w-lg mx-auto">Open to opportunities in Project Administration, Procurement, Document Control, Project Control, and Engineering Support. Based in Manado, Eastern Indonesia.</p>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-8">
+            <!-- Contact Info -->
+            <div class="reveal space-y-4">
+                <a href="mailto:cindyglory31@gmail.com" class="flex items-center gap-4 p-5 rounded-premium bg-white/10 backdrop-blur-sm border border-white/15 hover:bg-white/20 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center flex-shrink-0 group-hover:bg-white/25 transition-all">
+                        <i data-lucide="mail" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm text-white/60">Email</p>
+                        <p class="text-white font-medium">cindyglory31@gmail.com</p>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/cindy-glorya-salindeho-6598b3264/" target="_blank" class="flex items-center gap-4 p-5 rounded-premium bg-white/10 backdrop-blur-sm border border-white/15 hover:bg-white/20 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center flex-shrink-0 group-hover:bg-white/25 transition-all p-2">
+                        <img src="./images/icon.png" alt="LinkedIn" class="w-full h-full object-contain" onerror="this.style.display='none'; this.parentElement.style.background='#1a1a1a'; this.parentElement.innerHTML='<div style=display:flex;align-items:center;justify-content:center;height:100%;color:#666;font-size:14px;>📷 Image</div>';">
+                    </div>
+                    <div>
+                        <p class="text-sm text-white/60">LinkedIn</p>
+                        <p class="text-white font-medium">Cindy Glorya Salindeho</p>
+                    </div>
+                </a>
+                <a href="https://wa.me/6287777473581" target="_blank" class="flex items-center gap-4 p-5 rounded-premium bg-white/10 backdrop-blur-sm border border-white/15 hover:bg-white/20 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center flex-shrink-0 group-hover:bg-white/25 transition-all">
+                        <i data-lucide="message-circle" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm text-white/60">WhatsApp</p>
+                        <p class="text-white font-medium">+62 877 7747 3581</p>
+                    </div>
+                </a>
+                <a href="https://tinyurl.com/cindyglorycv" target="_blank" class="flex items-center gap-4 p-5 rounded-premium bg-white/10 backdrop-blur-sm border border-white/15 hover:bg-white/20 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center flex-shrink-0 group-hover:bg-white/25 transition-all">
+                        <i data-lucide="file-text" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm text-white/60">Resume</p>
+                        <p class="text-white font-medium">Download My Resume</p>
+                    </div>
+                </a>
+            </div>
+            <!-- Contact Form -->
+            <div class="reveal reveal-delay-2">
+                <form id="contactForm" class="p-8 rounded-premium bg-white/10 backdrop-blur-xl border border-white/15">
+                    <div class="space-y-4">
+                        <div>
+                            <label class="text-sm text-white/80 font-medium mb-1.5 block">Name</label>
+                            <input type="text" required class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-white/40 focus:outline-none focus:border-white/40 focus:bg-white/15 transition-all" placeholder="Your name">
+                        </div>
+                        <div>
+                            <label class="text-sm text-white/80 font-medium mb-1.5 block">Email</label>
+                            <input type="email" required class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-white/40 focus:outline-none focus:border-white/40 focus:bg-white/15 transition-all" placeholder="your@email.com">
+                        </div>
+                        <div>
+                            <label class="text-sm text-white/80 font-medium mb-1.5 block">Subject</label>
+                            <input type="text" required class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-white/40 focus:outline-none focus:border-white/40 focus:bg-white/15 transition-all" placeholder="What's this about?">
+                        </div>
+                        <div>
+                            <label class="text-sm text-white/80 font-medium mb-1.5 block">Message</label>
+                            <textarea rows="4" required class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-white/40 focus:outline-none focus:border-white/40 focus:bg-white/15 transition-all resize-none" placeholder="Tell me about your project or opportunity..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3.5 rounded-full bg-white text-teal-tropical font-bold hover:shadow-xl hover:shadow-white/20 transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                            <i data-lucide="send" class="w-5 h-5"></i> Schedule a Conversation
+                        </button>
+                    </div>
+                    <div id="formSuccess" class="hidden mt-4 p-4 rounded-xl bg-white/15 text-white text-center font-medium">
+                        ✅ Message sent successfully! I'll get back to you soon.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="py-12 bg-charcoal text-white">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-center md:text-left">
+                <h3 class="font-display text-xl font-bold">Cindy Glorya Salindeho</h3>
+                <p class="text-white/50 text-sm mt-1">Civil Engineer | Project Administration & Logistics Professional</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="mailto:cindyglory31@gmail.com" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-teal-tropical transition-all" aria-label="Email">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/cindy-glorya-salindeho-6598b3264/" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-teal-tropical transition-all p-2" aria-label="LinkedIn">
+                    <img src="./images/icon.png" alt="LinkedIn" class="w-full h-full object-contain" onerror="this.style.display='none'; this.parentElement.style.background='#1a1a1a'; this.parentElement.innerHTML='<div style=display:flex;align-items:center;justify-content:center;height:100%;color:#666;font-size:14px;>📷 Image</div>';">
+                </a>
+                <a href="https://wa.me/6287777473581" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#25D366] transition-all" aria-label="WhatsApp">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                </a>
+                <a href="https://tinyurl.com/cindyglorycv" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-coral-peach transition-all" aria-label="Resume">
+                    <i data-lucide="file-text" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+        <div class="mt-8 pt-8 border-t border-white/10 text-center text-sm text-white/40">
+            Copyright © 2026 Cindy Glorya Salindeho. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/6287777473581" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <i data-lucide="message-circle" class="w-6 h-6"></i>
+</a>
+
+<!-- Back to Top -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <i data-lucide="chevron-up" class="w-5 h-5"></i>
+</button>
+
+<!-- Project Modal -->
+<div class="modal-overlay" id="projectModal">
+    <div class="modal-content" id="modalBody">
+        <!-- Dynamic content -->
+    </div>
+</div>
+
+<!-- ==================== SCRIPTS ==================== -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // ====== LOADER ======
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            document.getElementById('loader').classList.add('hidden');
+        }, 1200);
+    });
+
+    // ====== SCROLL PROGRESS ======
+    const scrollProgress = document.getElementById('scroll-progress');
+    window.addEventListener('scroll', () => {
+        const scrollTop = document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const progress = (scrollTop / scrollHeight) * 100;
+        scrollProgress.style.width = progress + '%';
+    });
+
+    // ====== NAVBAR ======
+    const navbar = document.getElementById('navbar');
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        if (currentScroll > 80) {
+            navbar.style.background = 'rgba(255,253,248,0.85)';
+            navbar.style.backdropFilter = 'blur(20px)';
+            navbar.style.boxShadow = '0 1px 20px rgba(0,0,0,0.06)';
+        } else {
+            navbar.style.background = 'transparent';
+            navbar.style.backdropFilter = 'none';
+            navbar.style.boxShadow = 'none';
+        }
+        lastScroll = currentScroll;
+    });
+
+    // Active nav link
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            if (pageYOffset >= sectionTop) current = section.getAttribute('id');
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+        });
+    });
+
+    // ====== MOBILE MENU ======
+    const menuToggle = document.getElementById('menuToggle');
+    const menuClose = document.getElementById('menuClose');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    menuToggle.addEventListener('click', () => mobileMenu.classList.add('show'));
+    menuClose.addEventListener('click', () => mobileMenu.classList.remove('show'));
+    mobileLinks.forEach(link => link.addEventListener('click', () => mobileMenu.classList.remove('show')));
+
+    // ====== MOUSE GLOW ======
+    const mouseGlow = document.getElementById('mouseGlow');
+    if (window.innerWidth > 768) {
+        document.addEventListener('mousemove', (e) => {
+            mouseGlow.style.left = e.clientX + 'px';
+            mouseGlow.style.top = e.clientY + 'px';
+            mouseGlow.style.opacity = '1';
+        });
+        document.addEventListener('mouseleave', () => mouseGlow.style.opacity = '0');
+    } else {
+        mouseGlow.style.display = 'none';
+    }
+
+    // ====== SCROLL REVEAL ======
+    const revealElements = document.querySelectorAll('.reveal, .scale-reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // ====== COUNTER ANIMATION ======
+    const counterElements = document.querySelectorAll('.counter-value');
+    let counterAnimated = new Set();
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !counterAnimated.has(entry.target)) {
+                counterAnimated.add(entry.target);
+                const target = parseInt(entry.target.dataset.target);
+                const duration = 2000;
+                const start = performance.now();
+                const animate = (currentTime) => {
+                    const elapsed = currentTime - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    entry.target.textContent = Math.floor(target * eased);
+                    if (progress < 1) requestAnimationFrame(animate);
+                    else entry.target.textContent = target;
+                };
+                requestAnimationFrame(animate);
+            }
+        });
+    }, { threshold: 0.5 });
+    counterElements.forEach(el => counterObserver.observe(el));
+
+    // ====== BACK TO TOP ======
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 600) backToTop.classList.add('show');
+        else backToTop.classList.remove('show');
+    });
+
+    // ====== TESTIMONIAL CAROUSEL ======
+    let currentSlide = 0;
+    const totalSlides = 3;
+    const track = document.getElementById('testimonialTrack');
+    const dots = document.querySelectorAll('#carouselDots button');
+
+    function updateCarousel() {
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        dots.forEach((dot, i) => {
+            dot.className = `w-3 h-3 rounded-full transition-all ${i === currentSlide ? 'bg-teal-tropical w-6' : 'bg-charcoal/20'}`;
+        });
+    }
+
+    function slideTestimonial(dir) {
+        currentSlide = (currentSlide + dir + totalSlides) % totalSlides;
+        updateCarousel();
+    }
+
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            currentSlide = parseInt(dot.dataset.dot);
+            updateCarousel();
+        });
+    });
+
+    // Auto-slide
+    setInterval(() => slideTestimonial(1), 5000);
+
+    // ====== PROJECT MODAL ======
+    const projects = [
+        {
+            title: 'Regional Outlet Standardization & Document Control',
+            category: 'Project Administration • Document Control • Procurement',
+            image: './images/WhatsApp Image 2026-06-11 at 7.42.06 PM.jpeg',
+            gallery: [
+                './images/WhatsApp Image 2026-06-11 at 7.42.06 PM.jpeg',
+                './images/WhatsApp Image 2026-06-11 at 7.42.07 PM.jpeg',
+                './images/WhatsApp Image 2026-06-11 at 7.42.07 PM (1).jpeg',
+                './images/WhatsApp Image 2026-06-11 at 7.42.07 PM (2).jpeg',
+                './images/WhatsApp Image 2026-06-11 at 7.42.08 PM.jpeg',
+                './images/WhatsApp Image 2026-06-11 at 7.42.08 PM (1).jpeg'
+            ],
+            description: 'Managed large-scale procurement and project administration documents including Berita Acara, SPK, Nota Dinas, SOA, and Addendum through verification, digitization, scanning, and archiving. Processed 180+ vendor payments through e-Trust system and participated in 20+ site surveys across 6 branches.',
+            role: 'Administrator Dept. Logistik (Paid Internship)',
+            impact: ['Procurement document management (SPK, SOA, Addendum)', 'Vendor payment processing via e-Trust', 'Site verification across 6 branches (Sorong, Jayapura, Palu, Gorontalo, Luwuk, Manado)', 'Internal audit (SPI) preparation support'],
+            results: [
+                { value: '180+', label: 'Vendor Payments' },
+                { value: '500+', label: 'Data Entries' },
+                { value: '6', label: 'Regional Branches' },
+                { value: '20+', label: 'Site Surveys' }
+            ]
+        },
+        {
+            title: 'Vendor Payment & e-Trust Administration',
+            category: 'Procurement • Payment Processing • Document Control',
+            image: './images/people1 (1).jpeg',
+            gallery: [
+                './images/people1 (1).jpeg',
+                './images/WhatsApp Image 2026-06-12 at 4.35.00 PM.jpeg',
+                './images/WhatsApp Image 2026-06-12 at 4.34.59 PM.jpeg',
+                './images/WhatsApp Image 2026-06-12 at 4.34.59 PM (2).jpeg',
+                './images/WhatsApp Image 2026-06-12 at 4.34.59 PM (1).jpeg',
+                './images/WhatsApp Image 2026-06-12 at 4.34.58 PM.jpeg'
+            ],
+            description: 'Processed 180+ vendor payment submissions through the e-Trust Pegadaian system, including document completeness verification, data input, and administrative monitoring according to company procedures.',
+            role: 'Administrator Dept. Logistik (Paid Internship)',
+            impact: ['e-Trust payment processing', 'Document completeness verification', 'Administrative monitoring per company procedures', 'Coordination with Finance and Procurement units'],
+            results: [
+                { value: '180+', label: 'Payments Processed' },
+                { value: '✓', label: 'Verified Documents' },
+                { value: '✓', label: 'Company Compliance' },
+                { value: '✓', label: 'Multi-Unit Coordination' }
+            ]
+        },
+        {
+            title: 'Site Survey & Outlet Standardization',
+            category: 'Site Inspection • Project Monitoring • Field Work',
+            image: './images/WhatsApp Image 2026-06-12 at 4.55.18 PM.jpeg',
+            gallery: [
+                './images/WhatsApp Image 2026-06-12 at 4.55.18 PM.jpeg',
+                './images/WhatsApp Image 2026-06-12 at 4.40.34 PM (1).jpeg',
+                './images/WhatsApp Image 2026-06-12 at 4.40.34 PM.jpeg'
+            ],
+            description: 'Participated in 20+ outlet standardization project site surveys across 6 branches (Sorong, Jayapura, Palu, Gorontalo, Luwuk, and Manado), conducting document preparation, field verification, volume calculation, defect list preparation, and survey report compilation.',
+            role: 'Administrator Dept. Logistik (Paid Internship)',
+            impact: ['Site survey preparation and documentation', 'Field verification and volume calculation', 'Defect list preparation', 'Survey report compilation'],
+            results: [
+                { value: '20+', label: 'Site Surveys' },
+                { value: '6', label: 'Branches Covered' },
+                { value: '✓', label: 'Field Verification' },
+                { value: '✓', label: 'Report Compilation' }
+            ]
+        },
+        {
+            title: 'Road Infrastructure Survey & Tender Support',
+            category: 'Civil Engineering • Site Survey • Tender',
+            image: './images/WhatsApp Image 2026-06-12 at 2.09.52 PM.jpeg',
+            gallery: [
+                './images/WhatsApp Image 2026-06-12 at 2.09.52 PM.jpeg',
+                './images/WhatsApp Image 2026-06-12 at 2.10.00 PM.jpeg',
+                './images/WhatsApp Image 2026-06-12 at 2.11.07 PM.jpeg'
+            ],
+            description: 'Conducted road infrastructure site surveys, processed field data using Microsoft Excel, learned dredging and asphalt maintenance mechanisms guided by field practitioners, and actively participated in pre-qualification and tender processes.',
+            role: 'Intern – Road & Bridge Division (Bina Marga)',
+            impact: ['Road infrastructure site surveys', 'Field data processing with MS Excel', 'Dredging and asphalt maintenance learning', 'Pre-qualification and tender participation'],
+            results: [
+                { value: '✓', label: 'Site Survey' },
+                { value: '✓', label: 'Data Processing' },
+                { value: '✓', label: 'Tender Support' },
+                { value: '✓', label: 'Field Experience' }
+            ]
+        },
+        {
+            title: 'Project Data Management & AutoCAD Support',
+            category: 'Data Management • Budget Planning • Technical Drawing',
+            image: './images/people3.jpeg',
+            gallery: [
+                './images/people3.jpeg',
+                './images/WhatsApp Image 2026-06-12 at 17.43.00.jpeg',
+                './images/WhatsApp Image 2026-06-12 at 17.42.59.jpeg',
+                './images/WhatsApp Image 2026-06-12 at 17.42.59 (2).jpeg',
+                './images/WhatsApp Image 2026-06-12 at 17.42.59 (1).jpeg',
+                './images/WhatsApp Image 2026-06-12 at 17.42.58.jpeg',
+                './images/WhatsApp Image 2026-06-12 at 17.42.58 (2).jpeg',
+                './images/WhatsApp Image 2026-06-12 at 17.42.58 (1).jpeg',
+                './images/WhatsApp Image 2026-06-12 at 17.42.57.jpeg'
+            ],
+            description: 'Managed 500+ project data entries using MS Excel including vendor data, Rencana Anggaran Biaya (RAB), and Contract Change Order (CCO). Created 2D layout drawings using AutoCAD to support outlet renovation and development.',
+            role: 'Administrator Dept. Logistik (Paid Internship)',
+            impact: ['500+ project data entries in MS Excel', 'RAB and CCO analysis', '2D AutoCAD drawings for outlet support', 'Vendor data management'],
+            results: [
+                { value: '500+', label: 'Data Entries' },
+                { value: '✓', label: 'RAB & CCO' },
+                { value: '✓', label: 'AutoCAD Drawings' },
+                { value: '✓', label: 'Vendor Data' }
+            ]
+        }
+    ];
+
+    const modal = document.getElementById('projectModal');
+    const modalBody = document.getElementById('modalBody');
+
+    let galleryIndex = 0;
+    let galleryZoom = 1;
+    let galleryPanX = 0;
+    let galleryPanY = 0;
+    let isDragging = false;
+    let dragStartX = 0;
+    let dragStartY = 0;
+    let currentProjectIdx = 0;
+
+    function openModal(index) {
+        currentProjectIdx = index;
+        const p = projects[index];
+        const hasGallery = p.gallery && p.gallery.length > 1;
+
+        let galleryHTML = '';
+        if (hasGallery) {
+            galleryHTML = `
+                <div class="gallery-main" id="galleryMain" style="min-height: 320px; height: 50vh; max-height: 480px;">
+                    <div class="gallery-counter" id="galleryCounter">1 / ${p.gallery.length}</div>
+                    <img src="${p.gallery[0]}" alt="${p.title}" id="galleryImage" class="w-full h-full object-contain" draggable="false">
+                    <button class="gallery-nav-btn prev" onclick="galleryNav(-1)">&#8249;</button>
+                    <button class="gallery-nav-btn next" onclick="galleryNav(1)">&#8250;</button>
+                    <div class="gallery-zoom-controls">
+                        <button class="gallery-zoom-btn" onclick="galleryZoomIn()" title="Zoom In">+</button>
+                        <button class="gallery-zoom-btn" onclick="galleryZoomOut()" title="Zoom Out">−</button>
+                        <button class="gallery-zoom-btn" onclick="galleryZoomReset()" title="Reset Zoom">↺</button>
+                    </div>
+                </div>
+                <div class="gallery-thumbs" id="galleryThumbs">
+                    ${p.gallery.map((img, i) => `<div class="gallery-thumb ${i === 0 ? 'active' : ''}" onclick="galleryGoTo(${i})" data-thumb="${i}"><img src="${img}" alt="Photo ${i+1}" draggable="false"></div>`).join('')}
+                </div>
+            `;
+        } else {
+            galleryHTML = `<img src="${p.image}" alt="${p.title}" class="w-full h-48 object-cover rounded-premium mb-6">`;
+        }
+
+        modalBody.innerHTML = `
+            <div class="flex items-center justify-between mb-6">
+                <span class="px-3 py-1 rounded-full bg-teal-tropical/10 text-teal-tropical text-xs font-semibold">${p.category}</span>
+                <button onclick="closeModal()" class="w-10 h-10 rounded-full bg-charcoal/5 flex items-center justify-center hover:bg-charcoal/10 transition-all">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            ${galleryHTML}
+            <h3 class="font-display text-2xl font-bold mb-2 ${hasGallery ? 'mt-4' : ''}">${p.title}</h3>
+            <p class="text-teal-tropical font-semibold text-sm mb-4">${p.role}</p>
+            <p class="text-muted leading-relaxed mb-6">${p.description}</p>
+            <div class="mb-6">
+                <h4 class="font-display font-bold mb-3">Key Impact</h4>
+                <div class="space-y-2">
+                    ${p.impact.map(i => `<div class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-teal-tropical flex-shrink-0"></i><span class="text-sm">${i}</span></div>`).join('')}
+                </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 p-5 rounded-premium bg-sand-warm/50">
+                ${p.results.map(r => `<div class="text-center"><div class="text-xl font-bold text-teal-tropical">${r.value}</div><div class="text-xs text-muted mt-1">${r.label}</div></div>`).join('')}
+            </div>
+        `;
+
+        galleryIndex = 0;
+        galleryZoom = 1;
+        galleryPanX = 0;
+        galleryPanY = 0;
+
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+        lucide.createIcons();
+
+        if (hasGallery) {
+            setupGalleryDrag();
+        }
+
+        
+    }
+
+    function galleryNav(dir) {
+        const p = projects[currentProjectIdx];
+        if (!p.gallery) return;
+        galleryIndex = (galleryIndex + dir + p.gallery.length) % p.gallery.length;
+        galleryZoom = 1;
+        galleryPanX = 0;
+        galleryPanY = 0;
+        updateGalleryImage();
+    }
+
+    function galleryGoTo(i) {
+        galleryIndex = i;
+        galleryZoom = 1;
+        galleryPanX = 0;
+        galleryPanY = 0;
+        updateGalleryImage();
+    }
+
+    function updateGalleryImage() {
+        const p = projects[currentProjectIdx];
+        const img = document.getElementById('galleryImage');
+        const counter = document.getElementById('galleryCounter');
+        const thumbs = document.querySelectorAll('.gallery-thumb');
+        if (!img) return;
+        img.src = p.gallery[galleryIndex];
+        img.style.transform = `scale(${galleryZoom}) translate(${galleryPanX}px, ${galleryPanY}px)`;
+        if (counter) counter.textContent = `${galleryIndex + 1} / ${p.gallery.length}`;
+        thumbs.forEach((t, i) => {
+            t.classList.toggle('active', i === galleryIndex);
+        });
+        
+    }
+
+    function galleryZoomIn() {
+        galleryZoom = Math.min(galleryZoom + 0.5, 4);
+        applyGalleryTransform();
+    }
+
+    function galleryZoomOut() {
+        galleryZoom = Math.max(galleryZoom - 0.5, 1);
+        if (galleryZoom === 1) { galleryPanX = 0; galleryPanY = 0; }
+        applyGalleryTransform();
+    }
+
+    function galleryZoomReset() {
+        galleryZoom = 1;
+        galleryPanX = 0;
+        galleryPanY = 0;
+        applyGalleryTransform();
+    }
+
+    function applyGalleryTransform() {
+        const img = document.getElementById('galleryImage');
+        if (img) {
+            img.style.transform = `scale(${galleryZoom}) translate(${galleryPanX}px, ${galleryPanY}px)`;
+        }
+    }
+
+    function setupGalleryDrag() {
+        const main = document.getElementById('galleryMain');
+        const img = document.getElementById('galleryImage');
+        if (!main || !img) return;
+
+        main.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            if (e.deltaY < 0) {
+                galleryZoom = Math.min(galleryZoom + 0.25, 4);
+            } else {
+                galleryZoom = Math.max(galleryZoom - 0.25, 1);
+                if (galleryZoom === 1) { galleryPanX = 0; galleryPanY = 0; }
+            }
+            applyGalleryTransform();
+        }, { passive: false });
+
+        main.addEventListener('mousedown', (e) => {
+            if (galleryZoom > 1) {
+                isDragging = true;
+                dragStartX = e.clientX - galleryPanX;
+                dragStartY = e.clientY - galleryPanY;
+                img.style.transition = 'none';
+            }
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                galleryPanX = e.clientX - dragStartX;
+                galleryPanY = e.clientY - dragStartY;
+                applyGalleryTransform();
+            }
+        });
+
+        window.addEventListener('mouseup', () => {
+            isDragging = false;
+            const img = document.getElementById('galleryImage');
+            if (img) img.style.transition = 'transform 0.3s ease';
+        });
+
+        main.addEventListener('touchstart', (e) => {
+            if (galleryZoom > 1 && e.touches.length === 1) {
+                isDragging = true;
+                dragStartX = e.touches[0].clientX - galleryPanX;
+                dragStartY = e.touches[0].clientY - galleryPanY;
+                img.style.transition = 'none';
+            }
+        }, { passive: true });
+
+        main.addEventListener('touchmove', (e) => {
+            if (isDragging && e.touches.length === 1) {
+                galleryPanX = e.touches[0].clientX - dragStartX;
+                galleryPanY = e.touches[0].clientY - dragStartY;
+                applyGalleryTransform();
+            }
+        }, { passive: true });
+
+        main.addEventListener('touchend', () => {
+            isDragging = false;
+            const img = document.getElementById('galleryImage');
+            if (img) img.style.transition = 'transform 0.3s ease';
+        });
+    }
+
+    function closeModal() {
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+        if (modal.classList.contains('show')) {
+            if (e.key === 'ArrowLeft') galleryNav(-1);
+            if (e.key === 'ArrowRight') galleryNav(1);
+            if (e.key === '+' || e.key === '=') galleryZoomIn();
+            if (e.key === '-') galleryZoomOut();
+            if (e.key === '0') galleryZoomReset();
+        }
+    });
+
+    // ====== CONTACT FORM ======
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('button[type="submit"]');
+        btn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> Sending...';
+        lucide.createIcons();
+        setTimeout(() => {
+            this.reset();
+            document.getElementById('formSuccess').classList.remove('hidden');
+            btn.innerHTML = '<i data-lucide="send" class="w-5 h-5"></i> Schedule a Conversation';
+            lucide.createIcons();
+            setTimeout(() => document.getElementById('formSuccess').classList.add('hidden'), 4000);
+        }, 1500);
+    });
+
+    // ====== SMOOTH SCROLL ======
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const offset = 80;
+                const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({ top, behavior: 'smooth' });
+            }
+        });
+    });
+</script>
+<script src="https://deepsite.hf.co/deepsite-badge.js"></script>
+</body>
+</html>
